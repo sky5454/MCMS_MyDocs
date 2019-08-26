@@ -1,0 +1,20 @@
+<!--Bootstrap标签式导航栏菜单，
+    响应式写法参考：https://www.runoob.com/bootstrap/bootstrap-navbar.html-->
+<ul class="nav nav-pills">
+    <li class="active"><a href="#">HOME</a></li>
+    <li><a href="{ms:global.url/}">主站</a> </li>
+    <li><a href="https://www.baidu.com">百度</a> </li>
+
+    {ms:channel type=nav ref=one}
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="{ms:global.url/}[field.typelink/]">
+            [field.typetitle/]<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            {ms:channel  refs=one ref=two}
+                <li><a href="{ms:global.url/}[field.typelink/]">[field.typetitle/]</a></li>
+            {/ms:channel}
+        </ul>
+    </li>
+    {/ms:channel}
+</ul>

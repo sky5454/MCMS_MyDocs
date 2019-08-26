@@ -1,0 +1,28 @@
+<#include "headFile.htm">
+<#include "header.htm">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            文章列表
+        </h3>
+    </div>
+    <div class="panel-body">
+
+       <ol>
+           {ms:arclist ispaging=true}
+           <li><a href="{ms:global.url/}[field.link/]">
+               [field.title/]</a>
+           </li>
+           {/ms:arclist}
+       </ol>
+        <ul>
+            <li><a href="{ms:global.url/}{ms:page.index/}">首页</a></li>
+            <li><a href="{ms:global.url/}{ms:page.pre/}">上一页</a></li>
+            <li><a href="{ms:global.url/}{ms:page.next/}">下一页</a></li>
+            <li><a href="{ms:global.url/}{ms:page.last/}">末页</a></li>
+            <li>当前页/总页数<span>{ms:page.cur/}/{ms:page.total/}</span></li>
+            <li>本页有：<span>{ms:page.rcount/}</span>篇文章</li>
+        </ul>
+
+    </div>
+</div>
