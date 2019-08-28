@@ -8,16 +8,26 @@
 
 **本仓库说明**
 
+本人以 Java 开发人员视角来探究，和前端开发工程师侧重点有所不同，代码是从 github 上拉取的，运行上可能和一键部署脚本有区别。欢迎提建议或PR，以此解决不同环境下的差异。
+
 关于本文的疑问或建议，欢迎提 **ISSUE**
 
 - `CodeSnippets`目录：标签的一些用法例子，更多请见官网文档
-
 - `db-Workbench-Model`目录：MySQL Workbench 可使用的视图文件
 
-## MCMS 后台管理 使用与介绍
+
+
+## MCMS 后台管理界面 的使用
 
 >  这里只讲基本功能，以求能够快速上手，细节上的(如编号、属性、内容/封面地址之类的)请仔细查看管理界面
 >
+>  默认管理界面为 http://localhost:8080/ms-mcms/ms/index.do
+>
+>  帐号密码都是 msopen
+>
+>  默认主页 http://localhost:8080/ms-mcms/
+
+
 
 ### 内容管理
 
@@ -64,6 +74,8 @@
 
 其实主页也是栏目页的一种，不过因为主页比较重要，所以独立出来。  
 
+详见：[模板相关注意](#模板)
+
 点击生成按钮时，一定要特别注意后端控制台是否有输出错误，一般抛出异常都会导致更新失败
 
 
@@ -77,7 +89,9 @@
 
 效果如图：
 
-##### 列表（以"新闻中心 --- 行业新闻"为例）
+##### 列表
+
+（以"新闻中心 --- 行业新闻"为例）
 
 *栏目管理 里看到的效果*
 
@@ -87,7 +101,9 @@
 
 ![1566820511323](.assets/1566820511323.png)
 
-##### 封面（以"关于我们 --- 主营业务"为例）
+##### 封面
+
+（以"关于我们 --- 主营业务"为例）
 
 *栏目管理 里看到的效果*
 
@@ -118,6 +134,10 @@
 > 
 
 
+
+### 会员中心
+
+待更新
 
 ### 自定义管理
 
@@ -212,13 +232,75 @@
 
 ![1566986545223](.assets/1566986545223.png)
 
+
+
+### 权限管理
+
+待更新
+
+### 系统管理
+
+#### 模板管理
+
+**注意：** 4.7.1版本在 `servlet: multipart.enabled: true`的配置下，MCMS的上传功能全部出错。但是使用MCMS默认值 `false` 却又导致自定义的API无法上传文件....
+
+![1567003151128](.assets/1567003151128.png)
+
+这里的模板可以使用"上传文件"按钮，也可以手动解压模板到 `src/main/webapp/templets/1/ `目录下
+
+#### 应用设置
+
+> 这里是更换全局模板的地方
+
+![1567003645814](.assets/1567003645814.png)
+
+
+
+MCMS的上传模板功能有bug(会把模板里的路径斜杠符号去掉，如去掉了/)，所以建议不使用上传模板功能，需要时直接把模板解压到src/main/webapp/templets/1/
+另外，
+
+- 模板目录 src/main/webapp/templets/1/
+- 生成的静态文件在 src/main/webapp/html/1/下
+  - 桌面端网页为index.html
+  - 移动端为m/index.html
+  - 其余目录多为MCMS文章目录
+
+
+以上，1代表id为1的站点，详见MCMS全局通用标签
+
+
+
+
+
 ## 基于 MCMS 开发
 
-### API
+### 熟悉使用 MCMS 后台
+
+### MCMS 提供的 API
 
 [文件上传](http://doc.ms.mingsoft.net/plugs-cms/jie-kou/shang-chuan-wen-jian.html)，文件表(file)也是独立的、没有外键关联的表
 
+更多请见：
 
+- MCMS 提供的 API 文档：http://doc.ms.mingsoft.net/ms-api-front/
+
+- Swagger生成的文档：http://localhost:8080/ms-mcms/swagger-ui.html
+- 如需开发自定义 API ， 百度搜索“SpringBoot 项目开发”
+
+推荐较好的第三方库：
+
+-   Mybatis-Plus 好像暂时用不了![1567004682968](.assets/1567004682968.png)
+- [JAuth](https://github.com/harvardinformatics/JAuth)
+
+### 模板
+
+**值得一提的是**，模板文件里的`<#include "filename">`其实是 FreeMarker 模板的指令，见：[FreeMarker 参考](http://freemarker.foofun.cn/ref_directive_include.html)；而ms:global这些标签，则是基于 FreeMarker 封装的，具体可见 MCMS 数据库里的表`mdiy_tag`、`mdiy_tag_sql`
+
+![1567002779235](.assets/1567002779235.png)
+
+![1567002836613](.assets/1567002836613.png)
+
+![1567002890343](.assets/1567002890343.png)
 
 ### 本文更新中...
 
