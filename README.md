@@ -107,6 +107,7 @@
 
 
 ### 自定义管理
+> 详见官方文档：http://doc.ms.mingsoft.net/plugs-diy/
 
 #### 自定义字典
 
