@@ -89,6 +89,9 @@
  - 列表：用于放多篇文章的，[分页标签](http://doc.ms.mingsoft.net/plugs-cms/biao-qian/fen-ye-biao-qian-ms-page.html)只能用在“列表模板”里。
  - 封面：就是单个页面
 
+注：从"列表"改为"封面"时，需要编辑"封面"的文章内容才能生效，然后下一级栏目的`index.html`才会生成
+
+
 效果如图：
 
 ##### 列表
