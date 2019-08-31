@@ -292,6 +292,28 @@ MCMS的上传模板功能有bug(会把模板里的路径斜杠符号去掉，如
 -   Mybatis-Plus 好像暂时用不了![1567004682968](.assets/1567004682968.png)
 - [JAuth](https://github.com/harvardinformatics/JAuth)
 
+**文章编辑的API**
+
+http://localhost:8080/ms-mcms/ms/cms/article/220/edit
+
+或者
+
+http://localhost:8080/ms-mcms/ms/cms/article/220/edit.do
+
+
+
+![1567252732006](.assets/1567252732006.png)
+
+![1567252786351](.assets/1567252786351.png)
+
+源码详解
+
+![1567253773990](.assets/1567253773990.png)
+
+其他同理，可以在源码里找（包名 net.mingsoft.cms.action）
+
+![1567252883974](.assets/1567252883974.png)
+
 ### 模板
 
 #### ms:标签
