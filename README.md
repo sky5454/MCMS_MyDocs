@@ -12,9 +12,9 @@
 
 关于本文的疑问或建议，欢迎提 **ISSUE**
 
-- `CodeSnippets`目录：标签的一些用法例子，更多请见官网文档
-- `db-Workbench-Model`目录：MySQL Workbench 可使用的视图文件
-
+ - `CodeSnippets`目录：标签的一些用法例子，更多请见官网文档
+ - `db-Workbench-Model`目录：MySQL Workbench 可使用的视图文件
+ - 一些常见问题，也可以在本仓库内容或 ISSUE 里找到答案。
 
 
 重要内容：[后端开发手册-通用模块](doc.ms.mingsoft.net/dev-guide/tong-yong-mo-xing.html)
@@ -88,6 +88,9 @@
 > 栏目管理：管理栏目的... 栏目标题就是可以放在导航栏上的东东，栏目有"封面"和"列表"两种，
  - 列表：用于放多篇文章的，[分页标签](http://doc.ms.mingsoft.net/plugs-cms/biao-qian/fen-ye-biao-qian-ms-page.html)只能用在“列表模板”里。
  - 封面：就是单个页面
+
+注：从"列表"改为"封面"时，需要编辑"封面"的文章内容才能生效，然后下一级栏目的`index.html`才会生成
+
 
 效果如图：
 
