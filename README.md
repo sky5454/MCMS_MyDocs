@@ -14,7 +14,7 @@
 
  - `CodeSnippets`目录：标签的一些用法例子，更多请见官网文档
  - `db-Workbench-Model`目录：MySQL Workbench 可使用的视图文件
- - 一些常见问题，也可以在本仓库内容或 ISSUE 里找到答案。
+ - 一些常见问题如部署等，可在本仓库内容或 [ISSUE](https://github.com/sky5454/MCMS_MyDocs/issues) 里找到答案。
 
 
 重要内容：[后端开发手册-通用模块](doc.ms.mingsoft.net/dev-guide/tong-yong-mo-xing.html)
