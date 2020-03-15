@@ -337,6 +337,36 @@ http://localhost:8080/ms-mcms/ms/cms/article/220/edit.do
 
 
 
+
+**关于 ms:if 标签的**，官方文档 http://doc.ms.mingsoft.net/plugs-cms/biao-qian/luo-ji-biao-qian.html
+
+```text
+
+1. 逻辑标签
+1.1. ms:if
+
+判断语句
+
+{ms:channel type=nav ref=one}
+        {ms:if item.title!="aaaa"}
+                [field.title/]<br>
+        {/ms:if}        
+{/ms:channel}
+
+item为当前栏目对象，通过对象读取对应属性进行判断
+```
+
+这里的`item`是当前栏目对象，但是栏目对象里并没有`title`，只有`typetitle`，所以文档是错的（估计是以前写的，到现在都没有更正）
+所以应该改为 
+```
+{ms:if item.typetitle!="aaaa"}
+                [field.typetitle/]<br>
+        {/ms:if}    
+```
+
+你问我栏目对象里有什么对象，详见：[MCMS文档-标签说明-栏目列表](http://doc.ms.mingsoft.net/plugs-cms/biao-qian/lan-mu-lie-biao-ms-channel.html) 和 `数据库里的标签sql`
+
+
 ### 本文更新中...
 
 
